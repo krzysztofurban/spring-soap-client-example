@@ -10,9 +10,7 @@ import org.springframework.ws.soap.saaj.SaajSoapMessage;
 import org.tempuri.Add;
 import org.tempuri.AddResponse;
 
-import javax.xml.soap.SOAPEnvelope;
-import javax.xml.soap.SOAPException;
-import javax.xml.soap.SOAPMessage;
+import javax.xml.soap.*;
 import javax.xml.transform.TransformerException;
 import java.io.IOException;
 
@@ -26,26 +24,27 @@ public class CalculatorClient extends WebServiceGatewaySupport {
         log.info("Requesting addition result for {}", request.toString());
 
         AddResponse response = (AddResponse) getWebServiceTemplate()
-                .marshalSendAndReceive("http://www.dneonline.com/calculator.asmx", request, new WebServiceMessageCallback() {
-                    @Override
-                    public void doWithMessage(WebServiceMessage originMessage) throws IOException, TransformerException {
-                        SaajSoapMessage message= (SaajSoapMessage) originMessage;
-                        try {
-                            SOAPMessage saajMessage = message.getSaajMessage();
-                            SOAPEnvelope envelope = saajMessage.getSOAPPart().getEnvelope();
-                            envelope.removeNamespaceDeclaration(envelope.getPrefix());
-                            envelope.addNamespaceDeclaration("soapenv", "http://schemas.xmlsoap.org/soap/envelope/");
-                            envelope.addNamespaceDeclaration("tem",  "http://tempuri.org/");
-                            envelope.setPrefix("soapenv");
-                            saajMessage.getSOAPBody().removeNamespaceDeclaration(saajMessage.getSOAPBody().getPrefix());
-                            saajMessage.getSOAPBody().setPrefix("soapenv");
-                            saajMessage.getSOAPHeader().removeNamespaceDeclaration(saajMessage.getSOAPHeader().getPrefix());
-                            saajMessage.getSOAPHeader().setPrefix("soapenv");
-                        } catch (SOAPException e) {
-                            e.printStackTrace();
-                        }
-                        ((SaajSoapMessage) originMessage).setSoapAction("http://tempuri.org/Add");
+                .marshalSendAndReceive("http://www.dneonline.com/calculator.asmx", request, originMessage -> {
+                    SaajSoapMessage message= (SaajSoapMessage) originMessage;
+                    try {
+                        SOAPMessage saajMessage = message.getSaajMessage();
+                        SOAPEnvelope envelope = saajMessage.getSOAPPart().getEnvelope();
+                        envelope.removeNamespaceDeclaration(envelope.getPrefix());
+                        envelope.addNamespaceDeclaration("soapenv", "http://schemas.xmlsoap.org/soap/envelope/");
+                        envelope.addNamespaceDeclaration("tem",  "http://tempuri.org/");
+                        envelope.setPrefix("soapenv");
+
+                        SOAPBody soapBody = saajMessage.getSOAPBody();
+                        soapBody.removeNamespaceDeclaration(soapBody.getPrefix());
+                        soapBody.setPrefix("soapenv");
+
+                        SOAPHeader soapHeader = saajMessage.getSOAPHeader();
+                        soapHeader.removeNamespaceDeclaration(soapHeader.getPrefix());
+                        soapHeader.setPrefix("soapenv");
+                    } catch (SOAPException e) {
+                        e.printStackTrace();
                     }
+                    ((SaajSoapMessage) originMessage).setSoapAction("http://tempuri.org/Add");
                 });
 
         return response;

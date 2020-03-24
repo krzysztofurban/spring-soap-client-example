@@ -16,25 +16,6 @@ public class SpringSoapExampleApplication {
     }
 
     @Bean
-    public Jaxb2Marshaller marshaller() {
-        Jaxb2Marshaller marshaller = new Jaxb2Marshaller();
-        // this package must match the package in the <generatePackage> specified in
-        // pom.xml
-        marshaller.setContextPath("org.tempuri");
-        return marshaller;
-    }
-
-    @Bean
-    public CalculatorClient countryClient(Jaxb2Marshaller marshaller) {
-        CalculatorClient client = new CalculatorClient();
-        client.setDefaultUri("http://www.dneonline.com/calculator.asmx");
-        client.setWebServiceTemplate(new WebServiceTemplate());
-        client.setMarshaller(marshaller);
-        client.setUnmarshaller(marshaller);
-        return client;
-    }
-
-    @Bean
     CommandLineRunner lookup(CalculatorClient quoteClient) {
         return args -> {
             AddResponse response = quoteClient.getAddResponse(1,2);
