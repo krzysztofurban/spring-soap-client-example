@@ -8,18 +8,14 @@
 
 package org.tempuri;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.*;
 
 
 /**
  * <p>Java class for anonymous complex type.
- * 
+ *
  * <p>The following schema fragment specifies the expected content contained within this class.
- * 
+ *
  * <pre>
  * &lt;complexType&gt;
  *   &lt;complexContent&gt;
@@ -31,12 +27,10 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "divideResult"
+        "divideResult"
 })
 @XmlRootElement(name = "DivideResponse")
 public class DivideResponse {
@@ -46,7 +40,6 @@ public class DivideResponse {
 
     /**
      * Gets the value of the divideResult property.
-     * 
      */
     public int getDivideResult() {
         return divideResult;
@@ -54,7 +47,6 @@ public class DivideResponse {
 
     /**
      * Sets the value of the divideResult property.
-     * 
      */
     public void setDivideResult(int value) {
         this.divideResult = value;

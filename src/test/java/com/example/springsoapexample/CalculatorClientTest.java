@@ -7,11 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.ws.client.core.WebServiceTemplate;
-import org.springframework.xml.transform.StringSource;
 import org.springframework.ws.test.client.MockWebServiceServer;
-
-import javax.xml.transform.Source;
-import java.math.BigInteger;
 
 
 @RunWith(SpringRunner.class)

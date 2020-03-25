@@ -60,7 +60,9 @@ dependencies {
     implementation 'javax.activation:activation:1.1'
     implementation 'org.glassfish.jaxb:jaxb-runtime:2.3.0'
     jaxb("org.glassfish.jaxb:jaxb-xjc:2.2.11")
+////Uncomment this section if you want generate new sources from wsdl every compile
 //    compile(files(genJaxb.classesDir).builtBy(genJaxb))
+////
     testImplementation('junit:junit:4.13')
     testImplementation 'org.springframework.ws:spring-ws-test:3.0.8.RELEASE'
     testImplementation('org.springframework.boot:spring-boot-starter-test') {

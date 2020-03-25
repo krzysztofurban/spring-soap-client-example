@@ -8,8 +8,6 @@
 
 package org.tempuri;
 
-import org.springframework.ws.soap.server.endpoint.annotation.SoapAction;
-
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -18,9 +16,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * <p>Java class for anonymous complex type.
- * 
+ *
  * <p>The following schema fragment specifies the expected content contained within this class.
- * 
+ *
  * <pre>
  * &lt;complexType&gt;
  *   &lt;complexContent&gt;
@@ -33,13 +31,11 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "intA",
-    "intB"
+        "intA",
+        "intB"
 })
 @XmlRootElement(name = "Add")
 public class Add {
@@ -49,7 +45,6 @@ public class Add {
 
     /**
      * Gets the value of the intA property.
-     * 
      */
     public int getIntA() {
         return intA;
@@ -57,7 +52,6 @@ public class Add {
 
     /**
      * Sets the value of the intA property.
-     * 
      */
     public void setIntA(int value) {
         this.intA = value;
@@ -65,7 +59,6 @@ public class Add {
 
     /**
      * Gets the value of the intB property.
-     * 
      */
     public int getIntB() {
         return intB;
@@ -73,7 +66,6 @@ public class Add {
 
     /**
      * Sets the value of the intB property.
-     * 
      */
     public void setIntB(int value) {
         this.intB = value;

@@ -16,9 +16,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * <p>Java class for anonymous complex type.
- * 
+ *
  * <p>The following schema fragment specifies the expected content contained within this class.
- * 
+ *
  * <pre>
  * &lt;complexType&gt;
  *   &lt;complexContent&gt;
@@ -31,13 +31,11 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent&gt;
  * &lt;/complexType&gt;
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "intA",
-    "intB"
+        "intA",
+        "intB"
 })
 @XmlRootElement(name = "Divide")
 public class Divide {
@@ -47,7 +45,6 @@ public class Divide {
 
     /**
      * Gets the value of the intA property.
-     * 
      */
     public int getIntA() {
         return intA;
@@ -55,7 +52,6 @@ public class Divide {
 
     /**
      * Sets the value of the intA property.
-     * 
      */
     public void setIntA(int value) {
         this.intA = value;
@@ -63,7 +59,6 @@ public class Divide {
 
     /**
      * Gets the value of the intB property.
-     * 
      */
     public int getIntB() {
         return intB;
@@ -71,7 +66,6 @@ public class Divide {
 
     /**
      * Sets the value of the intB property.
-     * 
      */
     public void setIntB(int value) {
         this.intB = value;

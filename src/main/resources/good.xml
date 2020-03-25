@@ -3,7 +3,7 @@
     <soapenv:Body>
         <tem:Add>
             <tem:intA>1</tem:intA>
-         <tem:intB>1</tem:intB>
+            <tem:intB>1</tem:intB>
         </tem:Add>
     </soapenv:Body>
 </soapenv:Envelope>

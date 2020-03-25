@@ -7,7 +7,7 @@
 
 @javax.xml.bind.annotation.XmlSchema(xmlns = {
         @XmlNs(namespaceURI = "http://tempuri.org/", prefix = "tem")
-},  namespace = "http://tempuri.org/", elementFormDefault = javax.xml.bind.annotation.XmlNsForm.QUALIFIED)
+}, namespace = "http://tempuri.org/", elementFormDefault = javax.xml.bind.annotation.XmlNsForm.QUALIFIED)
 package org.tempuri;
 
 import javax.xml.bind.annotation.XmlNs;
